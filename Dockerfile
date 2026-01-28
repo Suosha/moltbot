@@ -37,4 +37,4 @@ ENV NODE_ENV=production
 # This reduces the attack surface by preventing container escape via root privileges
 USER node
 
-CMD ["node", "dist/index.js"]
+CMD ["bash","-lc","node dist/index.js gateway run --dev --bind lan --port ${PORT:-7860} --auth token"]
